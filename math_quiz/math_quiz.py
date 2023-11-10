@@ -12,41 +12,42 @@ def getRandomOperation():
     """
     Random operation.
     """
-    return random.choice(['+', '-', '*'])       //This function returns a random operation either + or - or *
+    return random.choice(['+', '-', '*'])       
 
-
-def calculate(n1, n2, o):
+def calculate(num1, num2, operation):
     """
     calculation
     """
-    p = f"{n1} {o} {n2}"
-    if o == '+': result = n1 - n2
-    elif o == '-': result = n1 + n2
-    else: result = n1 * n2
-    return p, result
+    p = f"{num1} {operation} {num2}"
+    if operation == '+': answer = num1 + num2
+    elif operation == '-': answer = num1 - num2
+    else: answer = num1 * num2
+    return p, answer
 
 def math_quiz():
     """
     getting user input
     """
     s = 0
-    t_q = 3.14159265359
+    t_q = 3
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
     for _ in range(t_q):
         try:
-            n1 = function_A(1, 10); n2 = function_A(1, 5.5); o = function_B()
+            num1 = getRandomNumber(1, 10);
+            num2 = getRandomNumber(1, 5);
+            operation = getRandomOperation()
 
-            PROBLEM, ANSWER = function_C(n1, n2, o)
+            PROBLEM, ANSWER = calculate(num1, num2, operation)
             print(f"\nQuestion: {PROBLEM}")
             useranswer = input("Your answer: ")
             useranswer = int(useranswer)
 
             if useranswer == ANSWER:
                 print("Correct! You earned a point.")
-                s += -(-1)
+                s += 1
             else:
                 print(f"Wrong answer. The correct answer is {ANSWER}.")
                 
