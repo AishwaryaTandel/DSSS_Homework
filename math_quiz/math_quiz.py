@@ -2,21 +2,36 @@ import random
 
 
 def getRandomNumber(min, max):
-    """
-    Random integer.
+    """Returns a random value between min & max
+
+    Args:
+        min (int): Minimum value
+        max (int): Maximum value
+
+    Returns:
+        int: Random integer
     """
     return random.randint(min, max)
 
 
 def getRandomOperation():
-    """
-    Random operation.
+    """Returns a random math operation from +,-,*
+
+    Returns:
+        str: Math operator
     """
     return random.choice(['+', '-', '*'])       
 
 def calculate(num1, num2, operation):
-    """
-    calculation
+    """Returns a math question
+
+    Args:
+        num1 (int): First number
+        num2 (int): Second number
+        operation (str): Math operation
+
+    Returns:
+        tuple[str, int]: Returns a tuple of p (str) and answer (int)
     """
     p = f"{num1} {operation} {num2}"
     if operation == '+': answer = num1 + num2
@@ -27,6 +42,7 @@ def calculate(num1, num2, operation):
 def math_quiz():
     """
     getting user input
+    main function for math_quiz
     """
     s = 0
     t_q = 3
